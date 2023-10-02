@@ -22,7 +22,10 @@
   "dependencies": {
     "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/utils": "^2.0.0",
-    "electron-updater": "^6.1.1"
+    "antd": "^5.9.4",
+    "electron-updater": "^6.1.1",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^1.0.1",
@@ -42,6 +45,10 @@
     "react-dom": "^18.2.0",
     "typescript": "^5.1.6",
     "vite": "^4.4.9"
+  },
+  "engines": {
+    "node": "20",
+    "pnpm": "8",
+    "npm": "9"
   }
-
 }

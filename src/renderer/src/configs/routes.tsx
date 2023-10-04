@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import Dashboard from "../Pages/Dashboard"
 import { MdOutlineDashboard } from 'react-icons/md'
+import CreatePolicy from "@renderer/Pages/CreatePolicy"
 
 interface routesType {
     label: string,
@@ -16,14 +17,14 @@ const routes: routesType[] = [
         path: '/',
         element: <Dashboard />,
         isNavItem: true,
-        icon: <MdOutlineDashboard />,
+        icon: <MdOutlineDashboard size={24} />,
     },
     {
-        label: 'dis',
-        path: '/dis',
-        element: <Dashboard />,
+        label: 'Create Policy',
+        path: '/createPolicy',
+        element: <CreatePolicy />,
         isNavItem: true,
-        icon: <MdOutlineDashboard />,
+        icon: <MdOutlineDashboard size={24} />,
     }
 ]
 

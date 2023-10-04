@@ -11,10 +11,13 @@ const menuItems: MenuItemType[] = []
 
 routes.map((route) => {
     if (route.isNavItem) {
-
         menuItems.push(
             {
-                label: route.label,
+                label: (
+                    <a href={route.path}>
+                        {route.label}
+                    </a>
+                ),
                 icon: route.icon,
                 key: route.path,
             }

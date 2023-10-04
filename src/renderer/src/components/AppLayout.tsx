@@ -1,8 +1,13 @@
 import { ReactNode } from 'react'
-import { Layout, Menu, Space, theme } from 'antd'
+import { Layout, Menu, theme, Avatar, Switch } from 'antd'
+import { WiDaySunny, WiMoonWaningCrescent4 } from 'react-icons/wi'
 import { Typography } from 'antd'
 import routes from '@renderer/configs/routes'
 import { MenuItemType } from 'antd/es/menu/hooks/useItems'
+import { UserOutlined } from '@ant-design/icons'
+import { Input, Space } from 'antd'
+
+const { Search } = Input
 
 interface DashboardProps {
   children: ReactNode
@@ -10,19 +15,13 @@ interface DashboardProps {
 const menuItems: MenuItemType[] = []
 
 routes.map((route) => {
-    if (route.isNavItem) {
-        menuItems.push(
-            {
-                label: (
-                    <a href={route.path}>
-                        {route.label}
-                    </a>
-                ),
-                icon: route.icon,
-                key: route.path,
-            }
-        )
-    }
+  if (route.isNavItem) {
+    menuItems.push({
+      label: <a href={route.path}>{route.label}</a>,
+      icon: route.icon,
+      key: route.path
+    })
+  }
 })
 
 const AppLayout = ({ children }: DashboardProps) => {
@@ -37,7 +36,17 @@ const AppLayout = ({ children }: DashboardProps) => {
             OS-Hardening
           </Typography.Title>
           <Space align="center">
-            <Typography.Text style={{ color: colorBgContainer }}>User</Typography.Text>
+            <Search style={{ marginTop: '1rem' }} placeholder="input search text" enterButton />
+            <Switch
+              checkedChildren={<WiDaySunny />}
+              unCheckedChildren={<WiMoonWaningCrescent4 />}
+              defaultChecked
+            />
+            <Avatar
+              style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
+              icon={<UserOutlined />}
+            />
+            <Typography.Text style={{ color: colorBgContainer }}>User </Typography.Text>
           </Space>
         </Space>
       </Layout.Header>

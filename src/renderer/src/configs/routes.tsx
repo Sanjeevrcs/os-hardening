@@ -4,6 +4,7 @@ import CreatePolicy from '../Pages/CreatePolicy'
 import UserLogs from '../Pages/UserLogs'
 import RemoteTroubleShooter from '../Pages/RemoteTroubleShooter'
 import { MdOutlineDashboard } from 'react-icons/md'
+import HardenSystems from '@renderer/Pages/HardenSystems'
 
 interface routesType {
   label: string
@@ -25,6 +26,13 @@ const routes: routesType[] = [
     label: 'Create Policy',
     path: '/createPolicy',
     element: <CreatePolicy />,
+    isNavItem: true,
+    icon: <MdOutlineDashboard size={24} />
+  },
+  {
+    label: 'Harden Systems',
+    path: '/hardenSystems',
+    element: <HardenSystems />,
     isNavItem: true,
     icon: <MdOutlineDashboard size={24} />
   },

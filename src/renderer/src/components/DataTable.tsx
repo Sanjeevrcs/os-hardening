@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import type { TableRowSelection } from 'antd/es/table/interface'
-import { Typography } from 'antd'
 
 interface DataType {
   key: React.Key

@@ -1,5 +1,5 @@
 import PageHeader from '@renderer/components/PageHeader'
-import DataTable from '@renderer/components/Datatable'
+import DataTable from '@renderer/components/DataTable'
 import { Input } from 'antd'
 import { Card } from 'antd'
 

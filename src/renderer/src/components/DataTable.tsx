@@ -5,28 +5,28 @@ import type { TableRowSelection } from 'antd/es/table/interface'
 
 interface DataType {
   key: React.Key
-  name: string
-  age: number
-  address: string
-  roll: number
+  systemName: string
+  ipAddress: number
+  actions: string
+  time: string
 }
 
 const columns: ColumnsType<DataType> = [
   {
-    title: 'Name',
-    dataIndex: 'name'
+    title: 'System Name',
+    dataIndex: 'systemName'
   },
   {
-    title: 'Age',
-    dataIndex: 'age'
+    title: 'IP Address',
+    dataIndex: 'ipAddress'
   },
   {
-    title: 'Address',
-    dataIndex: 'address'
+    title: 'Actions',
+    dataIndex: 'actions'
   },
   {
-    title: 'Roll',
-    dataIndex: 'roll'
+    title: 'Time',
+    dataIndex: 'time'
   }
 ]
 
@@ -34,10 +34,10 @@ const data: DataType[] = []
 for (let i = 0; i < 20; i++) {
   data.push({
     key: i,
-    name: `Edward King ${i}`,
-    age: 32,
-    address: `London, Park Lane no. ${i}`,
-    roll: i
+    systemName: `Edward King ${i}`,
+    ipAddress: 32,
+    actions: `London, Park Lane no. ${i}`,
+    time: `11.11`
   })
 }
 

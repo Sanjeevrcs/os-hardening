@@ -1,10 +1,10 @@
 import PageHeader from '@renderer/components/PageHeader'
 import { MdOutlineDashboard } from 'react-icons/md'
 import DashboardCard from '@renderer/components/DashboardCard'
-import { List, Typography } from 'antd'
+import { Col, List, Row, Typography } from 'antd'
 import { Avatar, Card } from 'antd'
-import { dashboadCards, activitiesData } from '@renderer/data/componentsData'
-
+import { dashboadCards } from '@renderer/data/DashboardData'
+import { activitiesData } from '@renderer/data/UserLogsData'
 const { Meta } = Card
 
 const Dashboard = (): JSX.Element => {
@@ -16,15 +16,13 @@ const Dashboard = (): JSX.Element => {
         icon={<MdOutlineDashboard />}
       />
       <div style={{ marginTop: '1rem' }}>
-        <List
-          grid={{ gutter: 16, column: 4 }}
-          dataSource={dashboadCards}
-          renderItem={(item) => (
-            <List.Item>
+        <Row gutter={[16, 16]}>
+          {dashboadCards.map((item) => (
+            <Col key={item.title} flex="6">
               <DashboardCard title={item.title} data={item.data} isPercentage={item.isPercentage} />
-            </List.Item>
-          )}
-        />
+            </Col>
+          ))}
+        </Row>
       </div>
       <List
         style={{ marginTop: '1rem', boxShadow: '20px 20px 34px 20px rgba(208, 216, 243, 0.6)' }}

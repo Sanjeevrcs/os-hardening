@@ -20,7 +20,7 @@ const PageHeader = ({ title, subTitle, icon }: PageHeaderProps): JSX.Element => 
       }}
     >
       <Typography.Title level={3}>
-        <span style={{ fontSize: '1.8rem', paddingRight: '0.5rem' }}>{icon}</span>
+        {/* <span style={{ fontSize: '1.8rem', paddingRight: '0.5rem' }}>{icon}</span> */}
         {title}
       </Typography.Title>
       <Typography.Text>{subTitle}</Typography.Text>

@@ -1,11 +1,15 @@
 import PageHeader from '@renderer/components/PageHeader'
 import TroubleShooterCard from '@renderer/components/TroubleShooterCard'
-import { TroubleShooterCards } from '@renderer/data/componentsData'
-import { List, Input } from 'antd'
-
-const { Search } = Input
+import { TroubleShooterCards, troubleShootOptions } from '@renderer/data/TroubleShooterData'
+import { List, Select, SelectProps } from 'antd'
+import { useState, SetStateAction } from 'react'
+const options: SelectProps['options'] = troubleShootOptions
 
 const RemoteTroubleShooter = (): JSX.Element => {
+  const [isSelected, setisSelected] = useState<SetStateAction<string>>('')
+  const handleChange = (value: SetStateAction<string>) => {
+    setisSelected(value)
+  }
   return (
     <>
       <PageHeader
@@ -13,25 +17,28 @@ const RemoteTroubleShooter = (): JSX.Element => {
         subTitle="Troubleshoot issues in the systems over the network"
       />
       <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-        <Search
-          placeholder="input search text"
-          style={{ width: '40rem' }}
+        <Select
           allowClear
-          enterButton="Search"
+          style={{ width: '100%' }}
+          placeholder="Please select"
+          onChange={handleChange}
+          options={options}
           size="large"
         />
       </div>
-      <div style={{ marginTop: '1rem' }}>
-        <List
-          grid={{ gutter: 16, column: 4 }}
-          dataSource={TroubleShooterCards}
-          renderItem={(item) => (
-            <List.Item>
-              <TroubleShooterCard title={item.title} description={item.description} />
-            </List.Item>
-          )}
-        />
-      </div>
+      {isSelected && (
+        <div style={{ marginTop: '1rem' }}>
+          <List
+            grid={{ gutter: 16, column: 4 }}
+            dataSource={TroubleShooterCards}
+            renderItem={(item) => (
+              <List.Item>
+                <TroubleShooterCard title={item.title} description={item.description} />
+              </List.Item>
+            )}
+          />
+        </div>
+      )}
     </>
   )
 }

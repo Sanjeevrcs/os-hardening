@@ -10,7 +10,6 @@ const CreatePolicy = (): JSX.Element => {
       <PageHeader
         title="Create Policy"
         subTitle="Here we have all the analytics and activities of the users"
-        icon={<MdOutlineDashboard />}
       />
       <Collapse
         accordion

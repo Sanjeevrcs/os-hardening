@@ -4,6 +4,9 @@ import CreatePolicy from '../Pages/CreatePolicy'
 import UserLogs from '../Pages/UserLogs'
 import RemoteTroubleShooter from '../Pages/RemoteTroubleShooter'
 import { MdOutlineDashboard } from 'react-icons/md'
+import { MdPolicy } from 'react-icons/md'
+import { GrTroubleshoot } from 'react-icons/gr'
+import { LuFiles } from 'react-icons/lu'
 import HardenSystems from '@renderer/Pages/HardenSystems'
 
 interface routesType {
@@ -27,7 +30,7 @@ const routes: routesType[] = [
     path: '/createPolicy',
     element: <CreatePolicy />,
     isNavItem: true,
-    icon: <MdOutlineDashboard size={24} />
+    icon: <MdPolicy size={24} />
   },
   {
     label: 'Harden Systems',
@@ -41,14 +44,14 @@ const routes: routesType[] = [
     path: '/troubleShooter',
     element: <RemoteTroubleShooter />,
     isNavItem: true,
-    icon: <MdOutlineDashboard size={24} />
+    icon: <GrTroubleshoot size={24} />
   },
   {
     label: 'User Logs',
     path: '/userLogs',
     element: <UserLogs />,
     isNavItem: true,
-    icon: <MdOutlineDashboard size={24} />
+    icon: <LuFiles size={24} />
   }
 ]
 

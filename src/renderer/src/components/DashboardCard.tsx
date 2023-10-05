@@ -10,24 +10,19 @@ interface CardProps {
 
 const DashboardCard = (props: CardProps): JSX.Element => {
   return (
-    <Space direction="vertical" size={16}>
-      <Card
-        hoverable
-        style={{ width: 300, boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 0.6)' }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography level={4}>{props.title}</Typography>
-          <a href="#">
-            <HiOutlineInformationCircle />
-          </a>
-        </div>
-        <Typography.Title level={2}>
-          {props.data}
-          {props.isPercentage ? '%' : ''}
-        </Typography.Title>
-        <Progress percent={props.data} showInfo={false} />
-      </Card>
-    </Space>
+    <Card hoverable style={{ minWidth: '16rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Typography level={4}>{props.title}</Typography>
+        <a href="#">
+          <HiOutlineInformationCircle />
+        </a>
+      </div>
+      <Typography.Title level={2}>
+        {props.data}
+        {props.isPercentage ? '%' : ''}
+      </Typography.Title>
+      <Progress percent={props.data} showInfo={false} />
+    </Card>
   )
 }
 

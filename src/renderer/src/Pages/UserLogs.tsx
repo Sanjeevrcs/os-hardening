@@ -13,15 +13,20 @@ const UserLogs = (): JSX.Element => {
       <PageHeader title="User Logs" subTitle="Search for logs and details about a system" />
       <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
         <Search
-          placeholder="input search text"
+          placeholder="Search Logs"
           style={{ width: '40rem' }}
           allowClear
           enterButton="Search"
           size="large"
         />
       </div>
-      <Card>
-        <Meta title="Logs" />
+      <Card
+        title="Logs"
+        style={{
+          boxShadow: '5px 8px 24px 5px rgba(208, 216, 243, 0.6)',
+          padding: '3px'
+        }}
+      >
         <DataTable />
       </Card>
     </>

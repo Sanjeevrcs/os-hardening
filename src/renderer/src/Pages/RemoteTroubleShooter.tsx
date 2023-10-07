@@ -1,6 +1,5 @@
 import PageHeader from '@renderer/components/PageHeader'
-import TroubleShooterCard from '@renderer/components/TroubleShooterCard'
-import { TroubleShooterCards, troubleShootOptions } from '@renderer/data/TroubleShooterData'
+import { troubleShooterCards, troubleShootOptions } from '@renderer/data/TroubleShooterData'
 import { List, Select, SelectProps } from 'antd'
 import { useState, SetStateAction } from 'react'
 const options: SelectProps['options'] = troubleShootOptions
@@ -27,17 +26,7 @@ const RemoteTroubleShooter = (): JSX.Element => {
         />
       </div>
       {isSelected && (
-        <div style={{ marginTop: '1rem' }}>
-          <List
-            grid={{ gutter: 16, column: 4 }}
-            dataSource={TroubleShooterCards}
-            renderItem={(item) => (
-              <List.Item>
-                <TroubleShooterCard title={item.title} description={item.description} />
-              </List.Item>
-            )}
-          />
-        </div>
+        <></>
       )}
     </>
   )

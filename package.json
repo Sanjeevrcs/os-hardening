@@ -20,10 +20,13 @@
     "build:linux": "electron-vite build && electron-builder --linux --config"
   },
   "dependencies": {
+    "@ant-design/plots": "^1.2.5",
     "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/utils": "^2.0.0",
     "antd": "^5.9.4",
+    "chart.js": "^4.4.0",
     "electron-updater": "^6.1.1",
+    "react-chartjs-2": "^5.2.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.16.0"
   },

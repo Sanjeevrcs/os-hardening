@@ -7,7 +7,9 @@ import { MdOutlineDashboard } from 'react-icons/md'
 import { MdPolicy } from 'react-icons/md'
 import { GrTroubleshoot } from 'react-icons/gr'
 import { LuFiles } from 'react-icons/lu'
+import { GiAutoRepair } from 'react-icons/gi'
 import HardenSystems from '@renderer/Pages/HardenSystems'
+import PatchSystems from '@renderer/Pages/PatchSystems'
 
 interface routesType {
   label: string
@@ -52,6 +54,13 @@ const routes: routesType[] = [
     element: <UserLogs />,
     isNavItem: true,
     icon: <LuFiles size={24} />
+  },
+  {
+    label: 'Patch Systems',
+    path: '/patchSystems',
+    element: <PatchSystems />,
+    isNavItem: true,
+    icon: <GiAutoRepair size={24} />
   }
 ]
 

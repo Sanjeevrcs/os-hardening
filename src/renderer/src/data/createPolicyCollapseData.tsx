@@ -25,9 +25,6 @@ const collapseItems: CollapseProps['items'] = [
     label: <h2>Security</h2>,
     children: <PolicySecurityFrom />
   }
-
 ]
 
 export default collapseItems
-
-

@@ -19,14 +19,13 @@ const CreatePolicy = (): JSX.Element => {
       <br />
       <Form layout="vertical">
         <Row>
-          <Col span="12" offset="6" >
-            <Form.Item
-              label="Enter Policy Name"
-              name="policyName"
-            >
+          <Col span="12" offset="6">
+            <Form.Item label="Enter Policy Name" name="policyName">
               <Input />
             </Form.Item>
-            <Button style={{ width: "100%" }} type="primary" htmlType="submit">Create Policy</Button>
+            <Button style={{ width: '100%' }} type="primary" htmlType="submit">
+              Create Policy
+            </Button>
           </Col>
         </Row>
       </Form>

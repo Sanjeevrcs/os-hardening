@@ -1,30 +1,27 @@
-import { Button, Input, Space, Tag } from "antd"
-import { useRef, useState } from "react";
-import type { InputRef } from "antd";
-import { valueType } from "antd/es/statistic/utils";
+import { Button, Input, Space, Tag } from 'antd'
+import { useRef, useState } from 'react'
+import type { InputRef } from 'antd'
+import { valueType } from 'antd/es/statistic/utils'
 
 const PolicyApplicationsFrom = () => {
-
-
   const [blockedApps, setBlockedApps] = useState<valueType[]>([])
   const [appsInputValue, setAppsInputValue] = useState<valueType>()
-  const appsInputRef = useRef<InputRef>(null);
+  const appsInputRef = useRef<InputRef>(null)
 
   const handleAppsInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAppsInputValue(e.target.value)
   }
   const handleAppsInputConfirm = () => {
     if (appsInputValue && blockedApps.indexOf(appsInputValue) === -1) {
-      setBlockedApps([...blockedApps, appsInputValue]);
+      setBlockedApps([...blockedApps, appsInputValue])
     }
-    setAppsInputValue('');
+    setAppsInputValue('')
   }
 
   const handleClose = (removedApp: valueType) => {
-    const newTags = blockedApps.filter((app) => app !== removedApp);
-    setBlockedApps(newTags);
-  };
-
+    const newTags = blockedApps.filter((app) => app !== removedApp)
+    setBlockedApps(newTags)
+  }
 
   return (
     <>
@@ -46,10 +43,12 @@ const PolicyApplicationsFrom = () => {
             style={{ margin: '0.5rem' }}
             closable
             onClose={(e) => {
-              e.preventDefault();
-              handleClose(app);
+              e.preventDefault()
+              handleClose(app)
             }}
-          >{app}</Tag>
+          >
+            {app}
+          </Tag>
         ))}
       </Space>
     </>

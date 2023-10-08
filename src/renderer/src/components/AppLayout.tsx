@@ -31,7 +31,6 @@ const AppLayout = ({ children }: DashboardProps) => {
 
   const [isDark, setIsDark] = useState(false)
 
-
   return (
     <ConfigProvider
       theme={{
@@ -76,7 +75,6 @@ const AppLayout = ({ children }: DashboardProps) => {
         </Layout>
       </Layout>
     </ConfigProvider>
-
   )
 }
 

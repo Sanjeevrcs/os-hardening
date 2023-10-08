@@ -1,4 +1,4 @@
-import { Col, Form, Row, Switch } from "antd"
+import { Col, Form, Row, Switch } from 'antd'
 
 const PolicySecurityFrom = () => {
   return (
@@ -6,30 +6,18 @@ const PolicySecurityFrom = () => {
       <Form layout="vertical">
         <Row>
           <Col flex="6">
-            <Form.Item
-              label="Address Based Layout Randomization"
-              name="ABLRPreference"
-            >
+            <Form.Item label="Address Based Layout Randomization" name="ABLRPreference">
               <Switch />
             </Form.Item>
-            <Form.Item
-              label="IP Forwarding"
-              name="IPFrowardingPreference"
-            >
+            <Form.Item label="IP Forwarding" name="IPFrowardingPreference">
               <Switch />
             </Form.Item>
           </Col>
           <Col flex="6">
-            <Form.Item
-              label="CRON Jobs"
-              name="CRONJobsPreference"
-            >
+            <Form.Item label="CRON Jobs" name="CRONJobsPreference">
               <Switch />
             </Form.Item>
-            <Form.Item
-              label="User GPG Key configuration"
-              name="GPGKeyPreference"
-            >
+            <Form.Item label="User GPG Key configuration" name="GPGKeyPreference">
               <Switch />
             </Form.Item>
           </Col>

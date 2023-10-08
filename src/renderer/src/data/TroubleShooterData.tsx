@@ -1,5 +1,3 @@
-import { DefaultOptionType } from 'antd/es/select'
-
 export const TroubleShooterCards: { title: string; description: string }[] = [
   {
     title: 'Security Process Status',

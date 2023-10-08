@@ -1,28 +1,65 @@
-import { Col, Form, Row, Switch } from 'antd'
+import features, { Categories, inputTypes } from "@renderer/data/features"
+import { Col, Form, Input, Row, Switch } from "antd"
+import { useEffect, useState } from "react"
 
 const PolicySecurityFrom = () => {
+  const [inputPereferences, setInputPreferences] = useState({})
+
+  useEffect(() => {
+    features.forEach((feature) => {
+      if (feature.category === Categories.Basics) {
+        if (feature.inputType === inputTypes.switch) {
+          setInputPreferences((prevPreferences) => ({
+            ...prevPreferences,
+            [`${feature.preferenceName}`]: false
+          }))
+        }
+      }
+    })
+  }, [])
   return (
     <>
-      <Form layout="vertical">
-        <Row>
-          <Col flex="6">
-            <Form.Item label="Address Based Layout Randomization" name="ABLRPreference">
-              <Switch />
-            </Form.Item>
-            <Form.Item label="IP Forwarding" name="IPFrowardingPreference">
-              <Switch />
-            </Form.Item>
-          </Col>
-          <Col flex="6">
-            <Form.Item label="CRON Jobs" name="CRONJobsPreference">
-              <Switch />
-            </Form.Item>
-            <Form.Item label="User GPG Key configuration" name="GPGKeyPreference">
-              <Switch />
-            </Form.Item>
-          </Col>
+      <Row>
+        <Row gutter={[8, 8]}>
+          {
+            features.map((feature, index) => {
+              if (feature.category === Categories.Security) {
+                if (feature.inputType === inputTypes.switch) {
+                  return (
+                    <Col span={6}>
+                      <Form.Item
+                        label={feature.label}
+                        name={feature.name}
+                      >
+                        <Switch onChange={() => setInputPreferences(
+                          {
+                            ...inputPereferences,
+                            [`${feature.preferenceName}`]: !inputPereferences[`${feature.preferenceName}`]
+                          }
+                        )} />
+                      </Form.Item>
+                    </Col>
+                  )
+                }
+              }
+            })
+          }
         </Row>
-      </Form>
+        <Col flex="auto">
+          {
+            features.map((feature) => (
+              feature.category === Categories.Security && feature.children?.map((child) => {
+                if (child.type === inputTypes.text || child.type === inputTypes.password) {
+                  return (
+                    <Form.Item label={child.label}>
+                      <Input disabled={!inputPereferences[`${feature.preferenceName}`]} type={child.type} />
+                    </Form.Item>)
+                }
+              })
+            ))
+          }
+        </Col>
+      </Row >
     </>
   )
 }

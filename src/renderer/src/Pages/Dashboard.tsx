@@ -25,7 +25,7 @@ const Dashboard = (): JSX.Element => {
         </Row>
       </div>
       <List
-        style={{ marginTop: '1rem', boxShadow: '20px 20px 34px 20px rgba(208, 216, 243, 0.6)' }}
+        style={{ marginTop: '1rem' }}
         header={<p>Activities</p>}
         bordered
         dataSource={activitiesData}

@@ -1,29 +1,39 @@
 import PageHeader from '@renderer/components/PageHeader'
-import { Button, Card, Col, Collapse, Form, Input, Row, theme, Modal, Space, Typography } from 'antd'
+import {
+  Button,
+  Card,
+  Col,
+  Collapse,
+  Form,
+  Input,
+  Row,
+  theme,
+  Modal,
+  Space,
+  Typography
+} from 'antd'
 import collapseItems from '@renderer/data/createPolicyCollapseData'
 import { createContext } from 'react'
 const CreatePolicy = (): JSX.Element => {
   const { token } = theme.useToken()
   const [form] = Form.useForm()
-  const [modal, contextHolder] = Modal.useModal();
+  const [modal, contextHolder] = Modal.useModal()
 
   const handlePolicyFormSubmit = async () => {
     form.resetFields()
-    modal.success(config);
+    modal.success(config)
   }
 
-  const ReachableContext = createContext<string | null>(null);
+  const ReachableContext = createContext<string | null>(null)
 
   const config = {
-    title: (
-      <Typography.Title level={4}>Policy created successfully</Typography.Title>
-    ),
+    title: <Typography.Title level={4}>Policy created successfully</Typography.Title>,
     content: (
       <>
         <Typography.Text>Policy created successfully</Typography.Text>
       </>
-    ),
-  };
+    )
+  }
 
   return (
     <ReachableContext.Provider value="">
@@ -47,19 +57,22 @@ const CreatePolicy = (): JSX.Element => {
                 padding: '3px'
               }}
             >
-              <Form.Item
-                label="Enter Policy Name"
-                name="policyName"
-              >
+              <Form.Item label="Enter Policy Name" name="policyName">
                 <Input />
               </Form.Item>
-              <Button style={{ width: "100%" }} type="primary" htmlType="submit" onClick={handlePolicyFormSubmit}>Create Policy</Button>
+              <Button
+                style={{ width: '100%' }}
+                type="primary"
+                htmlType="submit"
+                onClick={handlePolicyFormSubmit}
+              >
+                Create Policy
+              </Button>
             </Card>
           </Col>
         </Form>
-      </div >
+      </div>
       {contextHolder}
-
     </ReachableContext.Provider>
   )
 }

@@ -25,9 +25,7 @@ const RemoteTroubleShooter = (): JSX.Element => {
           size="large"
         />
       </div>
-      {isSelected && (
-        <></>
-      )}
+      {isSelected && <></>}
     </>
   )
 }

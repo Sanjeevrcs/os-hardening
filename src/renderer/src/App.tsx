@@ -33,7 +33,7 @@ function App(): JSX.Element {
           </AppLayout>
         </BrowserRouter>
       </ConfigProvider>
-    </Appd >
+    </Appd>
   )
 }
 

@@ -1,29 +1,88 @@
-export const TroubleShooterCards: { title: string; description: string }[] = [
+import PatchWorkSteps from "@renderer/components/PatchWorkSteps";
+import { Button, Col, CollapseProps, Row, Typography } from "antd";
+
+const TroubleshootSteps = {
+  "network": [
+    {
+      title: 'IP Configuration Check',
+    },
+    {
+      title: 'DNS Resolution Issues',
+    },
+    {
+      title: 'Firewall Configuration',
+    },
+    {
+      title: 'Network Service Restart',
+    },
+    {
+      title: 'Wifi Connection Issues',
+    }
+  ]
+}
+
+
+export const TroubleShooterCards: CollapseProps['items'] = [
   {
-    title: 'Security Process Status',
-    description: 'Troubleshoot connectivity issues '
+    key: 0,
+    label: (
+      <Row justify="space-between">
+        <Col flex="auto" >
+          <Typography.Title level={4}>Network</Typography.Title>
+        </Col>
+        <Button type="primary">Troubeshoot</Button>
+      </Row>
+    ),
+    children: <>
+      <PatchWorkSteps data={TroubleshootSteps.network} />
+    </>
   },
   {
-    title: 'Network Process Status',
-    description: 'Troubleshoot Network issues '
+    key: 1,
+    label: (
+      <Row justify="space-between">
+        <Col flex="auto" >
+          <Typography.Title level={4}>File System</Typography.Title>
+        </Col>
+        <Button type="primary">Troubeshoot</Button>
+      </Row>
+    ),
+    children: <>
+      <PatchWorkSteps data={TroubleshootSteps.network} />
+    </>
   },
   {
-    title: 'Disk Process Status',
-    description: 'Troubleshoot Disk issues '
+    key: 2,
+    label: (
+      <Row justify="space-between">
+        <Col flex="auto" >
+          <Typography.Title level={4}>Services Errors</Typography.Title>
+        </Col>
+        <Button type="primary">Troubeshoot</Button>
+      </Row>
+    ),
+    children: <>
+      <PatchWorkSteps data={TroubleshootSteps.network} />
+    </>
   },
   {
-    title: 'User Process Status',
-    description: 'Troubleshoot User issues '
+    key: 3,
+    label: (
+      <Row justify="space-between">
+        <Col flex="auto" >
+          <Typography.Title level={4}>Firewall</Typography.Title>
+        </Col>
+        <Button type="primary">Troubeshoot</Button>
+      </Row>
+    ),
+    children: <>
+      <PatchWorkSteps data={TroubleshootSteps.network} />
+    </>
   },
-  {
-    title: 'Firewall Process Status',
-    description: 'Troubleshoot Firewall issues '
-  },
-  {
-    title: 'Antivirus Process Status',
-    description: 'Troubleshoot Antivirus '
-  }
+
 ]
+
+
 
 export const troubleShootOptions: { label: string; value: string }[] = [
   {

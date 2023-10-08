@@ -29,24 +29,9 @@ export const PatchWorkSteps = (props: StepsProps): JSX.Element => {
       description: ''
     }
   ]
-  const handlePatching = () => {
-    if (props.isPatching) {
-      const intervalId = setInterval(() => {
-        if (currentStep < 4) {
-          setcurrentStep((prevStep) => prevStep + 1)
-        } else {
-          props.isPatchingSetter()
-          clearInterval(intervalId)
-        }
-      }, 2000)
 
-      return () => {
-        clearInterval(intervalId)
-      }
-    }
-  }
   useEffect(() => {
-    if (props.isPatching) {
+    if (props.isPatching && !props.data) {
       const intervalId = setInterval(() => {
         if (currentStep < 4) {
           setcurrentStep((prevStep) => prevStep + 1)
@@ -57,10 +42,16 @@ export const PatchWorkSteps = (props: StepsProps): JSX.Element => {
       }, 2000)
     }
   }, [props.isPatching, currentStep])
+
+  useEffect(() => {
+    setInterval(() => {
+      setcurrentStep((prevState) => prevState + 1)
+    }, 1000)
+  }, [props.data])
   //   alert(isPatching)
   return (
     <div>
-      <Steps current={currentStep} items={items} direction="vertical" />
+      <Steps current={currentStep} items={props.data ? props.data : items} direction="vertical" />
     </div>
   )
 }
